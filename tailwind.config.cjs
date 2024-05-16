@@ -54,7 +54,7 @@ module.exports = {
         transparent: "transparent",
       },
       fontFamily: {
-        mono: ["Noto Sans SC", "monospace"],
+        mono: ["Noto Serif SC", "monospace"],
       },
 
       typography: {
