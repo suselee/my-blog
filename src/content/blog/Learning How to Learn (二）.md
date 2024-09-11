@@ -1,6 +1,6 @@
 ---
 author: Suse
-pubDatetime: 2024-09-011T16:47:00Z
+pubDatetime: 2024-09-11T16:47:00Z
 title: Learning How to Learn (二）
 featured: true
 draft: false
