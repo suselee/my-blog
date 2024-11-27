@@ -41,6 +41,11 @@
     "version": "changeset version && node ./scripts/deps/update-example-versions.js && pnpm install --no-frozen-lockfile && pnpm run format",
     "preinstall": "npx only-allow pnpm"
   },
+  "workspaces": [
+    "packages/markdown/*",
+    "packages/integrations/*",
+    "packages/*"
+  ],
   "engines": {
     "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
   },
