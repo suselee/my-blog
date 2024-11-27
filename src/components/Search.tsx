@@ -1,5 +1,9 @@
 import Fuse from "fuse.js";
+<<<<<<< HEAD
 import { useEffect, useRef, useState, useMemo } from "react";
+=======
+import { useEffect, useRef, useState, useMemo, type FormEvent } from "react";
+>>>>>>> upstream/main
 import Card from "@components/Card";
 import type { CollectionEntry } from "astro:content";
 
@@ -26,7 +30,11 @@ export default function SearchBar({ searchList }: Props) {
     null
   );
 
+<<<<<<< HEAD
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
+=======
+  const handleChange = (e: FormEvent<HTMLInputElement>) => {
+>>>>>>> upstream/main
     setInputVal(e.currentTarget.value);
   };
 
@@ -58,7 +66,11 @@ export default function SearchBar({ searchList }: Props) {
   useEffect(() => {
     // Add search result only if
     // input value is more than one character
+<<<<<<< HEAD
     let inputResult = inputVal.length > 1 ? fuse.search(inputVal) : [];
+=======
+    const inputResult = inputVal.length > 1 ? fuse.search(inputVal) : [];
+>>>>>>> upstream/main
     setSearchResults(inputResult);
 
     // Update search string in URL
@@ -83,10 +95,14 @@ export default function SearchBar({ searchList }: Props) {
           <span className="sr-only">Search</span>
         </span>
         <input
+<<<<<<< HEAD
           className="block w-full rounded border border-skin-fill 
         border-opacity-40 bg-skin-fill py-3 pl-10
         pr-3 placeholder:italic placeholder:text-opacity-75 
         focus:border-skin-accent focus:outline-none"
+=======
+          className="block w-full rounded border border-skin-fill/40 bg-skin-fill py-3 pl-10 pr-3 placeholder:italic focus:border-skin-accent focus:outline-none"
+>>>>>>> upstream/main
           placeholder="Search for anything..."
           type="text"
           name="search"

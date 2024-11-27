@@ -9,5 +9,9 @@
 !astro.config.ts
 !package.json
 !.prettierrc
+<<<<<<< HEAD
 !.eslintrc.js
+=======
+!eslint.config.mjs
+>>>>>>> upstream/main
 !README.md

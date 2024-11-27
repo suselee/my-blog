@@ -11,7 +11,13 @@
       "@layouts/*": ["layouts/*"],
       "@pages/*": ["pages/*"],
       "@styles/*": ["styles/*"],
+<<<<<<< HEAD
       "@utils/*": ["utils/*"],
     },
   },
+=======
+      "@utils/*": ["utils/*"]
+    }
+  }
+>>>>>>> upstream/main
 }

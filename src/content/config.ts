@@ -1,8 +1,17 @@
 import { SITE } from "@config";
+<<<<<<< HEAD
 import { defineCollection, z } from "astro:content";
 
 const blog = defineCollection({
   type: "content",
+=======
+import { glob } from "astro/loaders";
+import { defineCollection, z } from "astro:content";
+
+const blog = defineCollection({
+  type: "content_layer",
+  loader: glob({ pattern: "**/*.md", base: "./src/content/blog" }),
+>>>>>>> upstream/main
   schema: ({ image }) =>
     z.object({
       author: z.string().default(SITE.author),
@@ -20,6 +29,17 @@ const blog = defineCollection({
         .optional(),
       description: z.string(),
       canonicalURL: z.string().optional(),
+<<<<<<< HEAD
+=======
+      editPost: z
+        .object({
+          disabled: z.boolean().optional(),
+          url: z.string().optional(),
+          text: z.string().optional(),
+          appendFilePath: z.boolean().optional(),
+        })
+        .optional(),
+>>>>>>> upstream/main
     }),
 });
 

@@ -8,6 +8,7 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
+<<<<<<< HEAD
 import Comments from "@components/Comments.astro";
 
 export interface Props {
@@ -15,6 +16,15 @@ export interface Props {
 }
 
 const { post } = Astro.props;
+=======
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+  posts: CollectionEntry<"blog">[];
+}
+
+const { post, posts } = Astro.props;
+>>>>>>> upstream/main
 
 const {
   title,
@@ -25,6 +35,10 @@ const {
   pubDatetime,
   modDatetime,
   tags,
+<<<<<<< HEAD
+=======
+  editPost,
+>>>>>>> upstream/main
 } = post.data;
 
 const { Content } = await post.render();
@@ -45,15 +59,34 @@ const layoutProps = {
   ogImage: ogUrl,
   scrollSmooth: true,
 };
+<<<<<<< HEAD
+=======
+
+/* ========== Prev/Next Posts ========== */
+
+const allPosts = posts.map(({ data: { title }, slug }) => ({
+  slug,
+  title,
+}));
+
+const currentPostIndex = allPosts.findIndex(a => a.slug === post.slug);
+
+const prevPost = currentPostIndex !== 0 ? allPosts[currentPostIndex - 1] : null;
+const nextPost =
+  currentPostIndex !== allPosts.length ? allPosts[currentPostIndex + 1] : null;
+>>>>>>> upstream/main
 ---
 
 <Layout {...layoutProps}>
   <Header />
 
+<<<<<<< HEAD
   <!-- <div class="progress-container fixed top-0 z-10 h-1 w-full bg-skin-fill">
     <div class="progress-bar h-1 w-0 bg-skin-accent" id="myBar"></div>
   </div> -->
 
+=======
+>>>>>>> upstream/main
   <div class="mx-auto flex w-full max-w-3xl justify-start px-2">
     <button
       class="focus-outline mb-2 mt-8 flex hover:opacity-75"
@@ -73,8 +106,15 @@ const layoutProps = {
       modDatetime={modDatetime}
       size="lg"
       className="my-2"
+<<<<<<< HEAD
     />
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
+=======
+      editPost={editPost}
+      postId={post.id}
+    />
+    <article id="article" class="prose mx-auto mt-8 max-w-3xl">
+>>>>>>> upstream/main
       <Content />
     </article>
 
@@ -99,7 +139,76 @@ const layoutProps = {
 
       <ShareLinks />
     </div>
+<<<<<<< HEAD
   <Comments />
+=======
+
+    <hr class="my-6 border-dashed" />
+
+    <!-- Previous/Next Post Buttons -->
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      {
+        prevPost && (
+          <a
+            href={`/posts/${prevPost.slug}`}
+            class="flex w-full gap-1 hover:opacity-75"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left flex-none"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M15 6l-6 6l6 6" />
+              </>
+            </svg>
+            <div>
+              <span>Previous Post</span>
+              <div class="text-sm text-skin-accent/85">{prevPost.title}</div>
+            </div>
+          </a>
+        )
+      }
+      {
+        nextPost && (
+          <a
+            href={`/posts/${nextPost.slug}`}
+            class="flex w-full justify-end gap-1 text-right hover:opacity-75 sm:col-start-2"
+          >
+            <div>
+              <span>Next Post</span>
+              <div class="text-sm text-skin-accent/85">{nextPost.title}</div>
+            </div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right flex-none"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M9 6l6 6l-6 6" />
+              </>
+            </svg>
+          </a>
+        )
+      }
+    </div>
+>>>>>>> upstream/main
   </main>
   <Footer />
 </Layout>
@@ -113,7 +222,11 @@ const layoutProps = {
   }
 </style>
 
+<<<<<<< HEAD
 <script is:inline>
+=======
+<script is:inline data-astro-rerun>
+>>>>>>> upstream/main
   /** Create a progress indicator
    *  at the top */
   function createProgressBar() {
@@ -138,6 +251,7 @@ const layoutProps = {
   /** Update the progress bar
    *  when user scrolls */
   function updateScrollProgress() {
+<<<<<<< HEAD
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     const height =
@@ -152,10 +266,29 @@ const layoutProps = {
     }
   }
   document.addEventListener("scroll", updateScrollProgress);
+=======
+    document.addEventListener("scroll", () => {
+      const winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      if (document) {
+        const myBar = document.getElementById("myBar");
+        if (myBar) {
+          myBar.style.width = scrolled + "%";
+        }
+      }
+    });
+  }
+  updateScrollProgress();
+>>>>>>> upstream/main
 
   /** Attaches links to headings in the document,
    *  allowing sharing of sections easily */
   function addHeadingLinks() {
+<<<<<<< HEAD
     let headings = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6"));
     for (let heading of headings) {
       heading.classList.add("group");
@@ -164,6 +297,22 @@ const layoutProps = {
       link.className = "heading-link hidden group-hover:inline-block ml-2";
       link.href = "#" + heading.id;
       link.ariaHidden = "true";
+=======
+    const headings = Array.from(
+      document.querySelectorAll("h2, h3, h4, h5, h6")
+    );
+    for (const heading of headings) {
+      heading.classList.add("group");
+      const link = document.createElement("a");
+      link.className =
+        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
+      link.href = "#" + heading.id;
+
+      const span = document.createElement("span");
+      span.ariaHidden = "true";
+      span.innerText = "#";
+      link.appendChild(span);
+>>>>>>> upstream/main
       heading.appendChild(link);
     }
   }
@@ -172,6 +321,7 @@ const layoutProps = {
   /** Attaches copy buttons to code blocks in the document,
    * allowing users to copy code easily. */
   function attachCopyButtons() {
+<<<<<<< HEAD
     let copyButtonLabel = "Copy";
     let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
@@ -180,6 +330,16 @@ const layoutProps = {
       wrapper.style.position = "relative";
 
       let copyButton = document.createElement("button");
+=======
+    const copyButtonLabel = "Copy";
+    const codeBlocks = Array.from(document.querySelectorAll("pre"));
+
+    for (const codeBlock of codeBlocks) {
+      const wrapper = document.createElement("div");
+      wrapper.style.position = "relative";
+
+      const copyButton = document.createElement("button");
+>>>>>>> upstream/main
       copyButton.className =
         "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
       copyButton.innerHTML = copyButtonLabel;
@@ -196,8 +356,13 @@ const layoutProps = {
     }
 
     async function copyCode(block, button) {
+<<<<<<< HEAD
       let code = block.querySelector("code");
       let text = code?.innerText;
+=======
+      const code = block.querySelector("code");
+      const text = code?.innerText;
+>>>>>>> upstream/main
 
       await navigator.clipboard.writeText(text ?? "");
 
@@ -220,4 +385,12 @@ const layoutProps = {
     });
   }
   backToTop();
+<<<<<<< HEAD
+=======
+
+  /* Go to page start after page swap */
+  document.addEventListener("astro:after-swap", () =>
+    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
+  );
+>>>>>>> upstream/main
 </script>

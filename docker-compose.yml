@@ -2,7 +2,11 @@ version: '3'
 
 services:
   app:
+<<<<<<< HEAD
     image: node:18
+=======
+    image: node:20
+>>>>>>> upstream/main
     ports:
       - 4321:4321
     working_dir: /app
