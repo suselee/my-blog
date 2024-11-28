@@ -1,16 +1,7 @@
-<<<<<<< HEAD
 import { SITE } from "@config";
 
 export default () => {
   return (
-=======
-import satori from "satori";
-import { SITE } from "@config";
-import loadGoogleFonts, { type FontOptions } from "../loadGoogleFont";
-
-export default async () => {
-  return satori(
->>>>>>> upstream/main
     <div
       style={{
         background: "#fefbfb",
@@ -91,18 +82,6 @@ export default async () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
     </div>
-=======
-    </div>,
-    {
-      width: 1200,
-      height: 630,
-      embedFont: true,
-      fonts: (await loadGoogleFonts(
-        SITE.title + SITE.desc + SITE.website
-      )) as FontOptions[],
-    }
->>>>>>> upstream/main
   );
 };

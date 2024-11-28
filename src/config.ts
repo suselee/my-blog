@@ -1,7 +1,6 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-<<<<<<< HEAD
   website: "https:blog.suse.asia", // replace this with your deployed domain
   author: "SuSe",
   desc: "在互联网上，留下些许痕迹",
@@ -10,33 +9,11 @@ export const SITE: Site = {
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 720 * 60 * 1000, // 720 minutes
-=======
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
-  author: "Sat Naing",
-  profile: "https://satnaing.dev/",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
-  ogImage: "astropaper-og.jpg",
-  lightAndDarkMode: true,
-  postPerIndex: 4,
-  postPerPage: 3,
-  scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
-  showArchives: true,
-  editPost: {
-    url: "https://github.com/satnaing/astro-paper/edit/main/src/content/blog",
-    text: "Suggest Changes",
-    appendFilePath: true,
-  },
->>>>>>> upstream/main
 };
 
 export const LOCALE = {
   lang: "en", // html lang code. Set this empty and default will be "en"
-<<<<<<< HEAD
   langTag: [], // BCP 47 Language Tags. Set this empty [] to use the environment default
-=======
-  langTag: ["en-EN"], // BCP 47 Language Tags. Set this empty [] to use the environment default
->>>>>>> upstream/main
 } as const;
 
 export const LOGO_IMAGE = {
@@ -49,11 +26,7 @@ export const LOGO_IMAGE = {
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-<<<<<<< HEAD
     href: "https://github.com/suselee",
-=======
-    href: "https://github.com/satnaing/astro-paper",
->>>>>>> upstream/main
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
@@ -61,27 +34,18 @@ export const SOCIALS: SocialObjects = [
     name: "Facebook",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Facebook`,
-<<<<<<< HEAD
     active: false,
-=======
-    active: true,
->>>>>>> upstream/main
   },
   {
     name: "Instagram",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Instagram`,
-<<<<<<< HEAD
     active: false,
-=======
-    active: true,
->>>>>>> upstream/main
   },
   {
     name: "LinkedIn",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on LinkedIn`,
-<<<<<<< HEAD
     active: false,
   },
   {
@@ -94,20 +58,6 @@ export const SOCIALS: SocialObjects = [
     name: "Twitter",
     href: "https://github.com/satnaing/astro-paper",
     linkTitle: `${SITE.title} on Twitter`,
-=======
-    active: true,
-  },
-  {
-    name: "Mail",
-    href: "mailto:yourmail@gmail.com",
-    linkTitle: `Send an email to ${SITE.title}`,
-    active: false,
-  },
-  {
-    name: "X",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on X`,
->>>>>>> upstream/main
     active: false,
   },
   {

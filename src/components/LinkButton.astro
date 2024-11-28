@@ -7,9 +7,6 @@ export interface Props {
   disabled?: boolean;
 }
 
-<<<<<<< HEAD
-const { href, className, ariaLabel, title, disabled = false } = Astro.props;
-=======
 const {
   href,
   className = "",
@@ -17,18 +14,12 @@ const {
   title,
   disabled = false,
 } = Astro.props;
->>>>>>> upstream/main
 ---
 
 {
   disabled ? (
     <span
-<<<<<<< HEAD
-      class={`group inline-block ${className}`}
-      aria-label={ariaLabel}
-=======
       class:list={["group inline-block", className]}
->>>>>>> upstream/main
       title={title}
       aria-disabled={disabled}
     >
@@ -37,11 +28,7 @@ const {
   ) : (
     <a
       {href}
-<<<<<<< HEAD
-      class={`group inline-block hover:text-skin-accent ${className}`}
-=======
       class:list={["group inline-block hover:text-skin-accent", className]}
->>>>>>> upstream/main
       aria-label={ariaLabel}
       title={title}
     >

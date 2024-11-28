@@ -222,11 +222,7 @@ const nextPost =
   }
 </style>
 
-<<<<<<< HEAD
 <script is:inline>
-=======
-<script is:inline data-astro-rerun>
->>>>>>> upstream/main
   /** Create a progress indicator
    *  at the top */
   function createProgressBar() {
@@ -251,7 +247,6 @@ const nextPost =
   /** Update the progress bar
    *  when user scrolls */
   function updateScrollProgress() {
-<<<<<<< HEAD
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
     const height =
@@ -266,29 +261,10 @@ const nextPost =
     }
   }
   document.addEventListener("scroll", updateScrollProgress);
-=======
-    document.addEventListener("scroll", () => {
-      const winScroll =
-        document.body.scrollTop || document.documentElement.scrollTop;
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      if (document) {
-        const myBar = document.getElementById("myBar");
-        if (myBar) {
-          myBar.style.width = scrolled + "%";
-        }
-      }
-    });
-  }
-  updateScrollProgress();
->>>>>>> upstream/main
 
   /** Attaches links to headings in the document,
    *  allowing sharing of sections easily */
   function addHeadingLinks() {
-<<<<<<< HEAD
     let headings = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6"));
     for (let heading of headings) {
       heading.classList.add("group");
@@ -297,22 +273,6 @@ const nextPost =
       link.className = "heading-link hidden group-hover:inline-block ml-2";
       link.href = "#" + heading.id;
       link.ariaHidden = "true";
-=======
-    const headings = Array.from(
-      document.querySelectorAll("h2, h3, h4, h5, h6")
-    );
-    for (const heading of headings) {
-      heading.classList.add("group");
-      const link = document.createElement("a");
-      link.className =
-        "heading-link ml-2 opacity-0 group-hover:opacity-100 focus:opacity-100";
-      link.href = "#" + heading.id;
-
-      const span = document.createElement("span");
-      span.ariaHidden = "true";
-      span.innerText = "#";
-      link.appendChild(span);
->>>>>>> upstream/main
       heading.appendChild(link);
     }
   }
@@ -321,7 +281,6 @@ const nextPost =
   /** Attaches copy buttons to code blocks in the document,
    * allowing users to copy code easily. */
   function attachCopyButtons() {
-<<<<<<< HEAD
     let copyButtonLabel = "Copy";
     let codeBlocks = Array.from(document.querySelectorAll("pre"));
 
@@ -330,16 +289,6 @@ const nextPost =
       wrapper.style.position = "relative";
 
       let copyButton = document.createElement("button");
-=======
-    const copyButtonLabel = "Copy";
-    const codeBlocks = Array.from(document.querySelectorAll("pre"));
-
-    for (const codeBlock of codeBlocks) {
-      const wrapper = document.createElement("div");
-      wrapper.style.position = "relative";
-
-      const copyButton = document.createElement("button");
->>>>>>> upstream/main
       copyButton.className =
         "copy-code absolute right-3 -top-3 rounded bg-skin-card px-2 py-1 text-xs leading-4 text-skin-base font-medium";
       copyButton.innerHTML = copyButtonLabel;
@@ -356,13 +305,8 @@ const nextPost =
     }
 
     async function copyCode(block, button) {
-<<<<<<< HEAD
       let code = block.querySelector("code");
       let text = code?.innerText;
-=======
-      const code = block.querySelector("code");
-      const text = code?.innerText;
->>>>>>> upstream/main
 
       await navigator.clipboard.writeText(text ?? "");
 
@@ -385,12 +329,4 @@ const nextPost =
     });
   }
   backToTop();
-<<<<<<< HEAD
-=======
-
-  /* Go to page start after page swap */
-  document.addEventListener("astro:after-swap", () =>
-    window.scrollTo({ left: 0, top: 0, behavior: "instant" })
-  );
->>>>>>> upstream/main
 </script>

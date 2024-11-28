@@ -27,12 +27,7 @@ export default defineConfig({
       ],
     ],
     shikiConfig: {
-<<<<<<< HEAD
       theme: "one-dark-pro",
-=======
-      // For more themes, visit https://shiki.style/themes
-      themes: { light: "min-light", dark: "night-owl" },
->>>>>>> upstream/main
       wrap: true,
     },
   },
@@ -42,10 +37,4 @@ export default defineConfig({
     },
   },
   scopedStyleStrategy: "where",
-<<<<<<< HEAD
-=======
-  experimental: {
-    contentLayer: true,
-  },
->>>>>>> upstream/main
 });

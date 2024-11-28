@@ -4,11 +4,7 @@ import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
 export interface Props {
-<<<<<<< HEAD
-  activeNav?: "posts" | "tags" | "about" | "search";
-=======
   activeNav?: "posts" | "archives" | "tags" | "about" | "search";
->>>>>>> upstream/main
 }
 
 const { activeNav } = Astro.props;
@@ -74,8 +70,6 @@ const { activeNav } = Astro.props;
               About
             </a>
           </li>
-<<<<<<< HEAD
-=======
           {
             SITE.showArchives && (
               <li>
@@ -111,7 +105,6 @@ const { activeNav } = Astro.props;
               </li>
             )
           }
->>>>>>> upstream/main
           <li>
             <LinkButton
               href="/search/"
@@ -197,11 +190,7 @@ const { activeNav } = Astro.props;
   nav ul li:nth-last-child(2) {
     @apply col-span-1;
   }
-<<<<<<< HEAD
-  nav a.active {
-=======
   nav .active {
->>>>>>> upstream/main
     @apply underline decoration-wavy decoration-2 underline-offset-4;
   }
   nav a.active svg {
